@@ -1,0 +1,13 @@
+先说java集成：
+
+1.原理
+  旧的工程使用myeclipse编译和部署到tomcat，工程打压缩包*.tar.gz,然后docker打镜像，再部署k8s，才可以访问。
+  修改后：提交代码，jenkins调用maven测试和打包，打包后执行linux脚本发布生成tar.gz并docker打镜像和发布k8s。
+  
+2.流程
+  
+  配置可能有点麻烦，但是配置是一次性的，以后不用在配置。
+  jenkins新建maven任务->配置svn或者git地址->配置shell脚本，一个是本机的，一个是docker和k8s服务器的->构建看日志
+  （1）发布java代码，保证本地test正常和工程部署tomcat正常。
+  （2）配置docker目录文件：Dockerfile（打镜像），*.yaml（部署k8s）,congfig(用于打包)
+  （3）配置jenkins任务脚本，参考apps_student_server即可。
