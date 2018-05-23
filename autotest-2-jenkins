@@ -1,4 +1,4 @@
-先说java集成：
+java集成：
 
 1.原理
   旧的工程使用myeclipse编译和部署到tomcat，工程打压缩包*.tar.gz,然后docker打镜像，再部署k8s，才可以访问。
