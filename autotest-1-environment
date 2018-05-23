@@ -7,8 +7,30 @@ selenium集成了请求http地址的方法，使用python+selenium+chromedriver�
 
 （1）selenium有集成火狐的ide，可以录制脚本，不需要写代码，但本文不做探讨。
 （2）python+selenium+chromedriver体系：
-  安装python，打上环境变量配置，保证系统cmd可以执行：python和pip命令（没有的可以手工配置，百度一下）。
+  安装python，打上环境变量配置，保证系统cmd（windows+R）可以执行：python和pip命令（没有的可以手工配置，百度一下）。
+  
+  cmd输入:pip install selenium
+  
+  浏览器驱动可以放到python安装的目录，保证系统有chromedriver命令。
   
 3.demo
-  autotest.py
+ 
+ 
+ 
+#coding=utf-8
+from selenium import webdriver
+
+def main():
+	#获取谷歌浏览器驱动
+	browser = webdriver.Chrome()
+	
+	#浏览器打开百度
+	index='http://www.baidu.com'
+	browser.get(index)
+	
+	#搜索框输入
+	keywords=browser.find_element_by_id('kw').send_keys("荔枝")
+
+if __name__ =='__main__':
+    main()
   
