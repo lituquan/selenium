@@ -13,7 +13,7 @@ selenium集成了请求http地址的方法，使用python+selenium+chromedriver�
   
   浏览器驱动可以放到python安装的目录，保证系统有chromedriver命令。
   
-3.demo
+3.demo，访问百度搜索
  
  
  
