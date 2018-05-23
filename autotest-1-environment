@@ -1,0 +1,14 @@
+1.原理
+
+selenium集成了请求http地址的方法，使用python+selenium+chromedriver打开chrome浏览器，然后python程序化模拟用户请求。
+程序化是指：经过selenium可以获得页面元素，可以执行鼠标和键盘等事件操作。
+
+2.环境
+
+（1）selenium有集成火狐的ide，可以录制脚本，不需要写代码，但本文不做探讨。
+（2）python+selenium+chromedriver体系：
+  安装python，打上环境变量配置，保证系统cmd可以执行：python和pip命令（没有的可以手工配置，百度一下）。
+  
+3.demo
+  autotest.py
+  
