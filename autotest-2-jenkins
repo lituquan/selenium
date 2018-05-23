@@ -11,3 +11,7 @@
   （1）发布java代码，保证本地test正常和工程部署tomcat正常。
   （2）配置docker目录文件：Dockerfile（打镜像），*.yaml（部署k8s）,congfig(用于打包)
   （3）配置jenkins任务脚本，参考apps_student_server即可。
+  
+3.坑：
+  maven使用1.8jdk编译，spring3.2.8以下可能有asmloader文件加载异常。
+  maven工程中单元测试资源放在src/test/resource中，maven才可以读取到。
