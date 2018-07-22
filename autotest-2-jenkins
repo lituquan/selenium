@@ -19,7 +19,7 @@ java集成：
 
 go集成：
   1.原理
-    go编译成一个可执行文件，写Dockerfile并生成镜像，镜像执行。
+    提交代码，jenkins执行go build 编译，生成一个可执行文件，写Dockerfile并打包镜像。
   2.Dockerfile 参考   
     FROM ubuntu:latest  #基础镜像，一个linux系统
     MAINTAINER lituquan 1242441055@qq.com #作者信息
