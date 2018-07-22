@@ -2,7 +2,7 @@ java集成：
 
 1.原理
   旧的工程使用myeclipse编译和部署到tomcat，工程打压缩包*.tar.gz,然后docker打镜像，再部署k8s，才可以访问。
-  修改后：提交代码，jenkins调用maven测试和打包，打包后执行linux脚本发布生成tar.gz并docker打镜像和发布k8s。
+  修改后：提交代码，jenkins调用maven测试和打包，打包后执行linux脚本发布生成tar.gz，并调用docker打镜像和发布k8s。
   
 2.流程
   
@@ -15,3 +15,22 @@ java集成：
 3.坑：
   maven使用1.8jdk编译，spring3.2.8以下可能有asmloader文件加载异常。
   maven工程中单元测试资源放在src/test/resource中，maven才可以读取到。
+
+
+go集成：
+  1.原理
+    go编译成一个可执行文件，写Dockerfile并生成镜像，镜像执行。
+  2.Dockerfile 参考   
+    FROM ubuntu:latest  #基础镜像，一个linux系统
+    MAINTAINER lituquan 1242441055@qq.com #作者信息
+    EXPOSE 8080 #暴露端口
+    ADD hello /var/paas/project-hello/ #拷贝编译后的工程
+    RUN chmod -R 750 /var/paas/ #授权可执行
+    CMD ["/var/paas/project-hello/hello"] #启动镜像
+  3.运行
+    #直接运行镜像
+    docker run -p 8080:8080 hello:0.0.1 
+    #使用k8s
+    修改部署文件
+
+  
