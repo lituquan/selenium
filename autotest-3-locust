@@ -1,0 +1,8 @@
+压力测试
+1.ab
+
+2.wrk--只能linux用
+
+3.locust--python\分布式\可以用golang做从
+
+4.jmeter--java
